@@ -31,121 +31,132 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="container hat-container">
-          <div className="row row-cols-1 row-cols-md-2 row-cols-xxl-4">
-            <div className="col d-flex justify-content-center">
-              <DraggableCore
-                dle=".handle"
-                defaaxis="both"
-                hanultPosition={{x: 0, y: 0}}
-                position={null}
-                scale={1}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}
-                onMouseDown={(e) => {
-                  this.changeZ(e)
-                }}>
-                <div className="box handle" id="box1">
-                  <div className="">
-                    <img className="hat" src={hat1} alt="Hat"></img>
-                    </div>
+        <div className="container title-container">
+          <h1 className="title text-center">Cat Hat</h1>
+          <h2 className="title text-center"><i>Place the hats on the cats!</i></h2>
+        </div>
+        <div className="container hat-cat-container">
+          <div className="row">
+            <div className="col-xxl">
+              <div className="container hat-container">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-xxl-4">
+                  <div className="col d-flex justify-content-center">
+                    <DraggableCore
+                      dle=".handle"
+                      defaaxis="both"
+                      hanultPosition={{x: 0, y: 0}}
+                      position={null}
+                      scale={1}
+                      onStart={this.handleStart}
+                      onDrag={this.handleDrag}
+                      onStop={this.handleStop}
+                      onMouseDown={(e) => {
+                        this.changeZ(e)
+                      }}>
+                      <div className="box handle" id="box1">
+                        <div className="">
+                          <img className="hat" src={hat1} alt="Hat"></img>
+                          </div>
+                      </div>
+                    </DraggableCore>
+                  </div>
+                  <div className="col d-flex justify-content-center">
+                    <Draggable
+                      dle=".handle"
+                      defaaxis="both"
+                      hanultPosition={{x: 0, y: 0}}
+                      position={null}
+                      scale={1}
+                      onStart={this.handleStart}
+                      onDrag={this.handleDrag}
+                      onStop={this.handleStop}
+                      onMouseDown={(e) => {
+                        this.changeZ(e)
+                      }}>        
+                      <div className="box handle" id="box2">
+                        <div className="">
+                          <img className="hat" src={hat2} alt="Hat"></img>
+                          </div>
+                      </div>
+                    </Draggable>
+                  </div>
+                  <div className="col d-flex justify-content-center">
+                    <Draggable
+                      dle=".handle"
+                      defaaxis="both"
+                      hanultPosition={{x: 0, y: 0}}
+                      position={null}
+                      scale={1}
+                      onStart={this.handleStart}
+                      onDrag={this.handleDrag}
+                      onStop={this.handleStop}
+                      onMouseDown={(e) => {
+                        this.changeZ(e)
+                      }}>
+                      <div className="box handle" id="box3">
+                        <div className="">
+                          <img className="hat" src={hat3} alt="Hat"></img>
+                          </div>
+                      </div>
+                    </Draggable>
+                  </div>
+                  <div className="col d-flex justify-content-center">
+                    <Draggable
+                      dle=".handle"
+                      defaaxis="both"
+                      hanultPosition={{x: 0, y: 0}}
+                      position={null}
+                      scale={1}
+                      onStart={this.handleStart}
+                      onDrag={this.handleDrag}
+                      onStop={this.handleStop}
+                      onMouseDown={(e) => {
+                        this.changeZ(e)
+                      }}>
+                      <div className="box handle" id="box4">
+                        <div className="">
+                          <img className="hat" src={hat4} alt="Hat"></img>
+                          </div>
+                      </div>
+                    </Draggable>
+                  </div>
                 </div>
-              </DraggableCore>
+              </div>
             </div>
-            <div className="col d-flex justify-content-center">
-              <Draggable
-                dle=".handle"
-                defaaxis="both"
-                hanultPosition={{x: 0, y: 0}}
-                position={null}
-                scale={1}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}
-                onMouseDown={(e) => {
-                  this.changeZ(e)
-                }}>        
-                <div className="box handle" id="box2">
-                  <div className="">
-                    <img className="hat" src={hat2} alt="Hat"></img>
-                    </div>
-                </div>
-              </Draggable>
-            </div>
-            <div className="col d-flex justify-content-center">
-              <Draggable
-                dle=".handle"
-                defaaxis="both"
-                hanultPosition={{x: 0, y: 0}}
-                position={null}
-                scale={1}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}
-                onMouseDown={(e) => {
-                  this.changeZ(e)
-                }}>
-                <div className="box handle" id="box3">
-                  <div className="">
-                    <img className="hat" src={hat3} alt="Hat"></img>
-                    </div>
-                </div>
-              </Draggable>
-            </div>
-            <div className="col d-flex justify-content-center">
-              <Draggable
-                dle=".handle"
-                defaaxis="both"
-                hanultPosition={{x: 0, y: 0}}
-                position={null}
-                scale={1}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}
-                onMouseDown={(e) => {
-                  this.changeZ(e)
-                }}>
-                <div className="box handle" id="box4">
-                  <div className="">
-                    <img className="hat" src={hat4} alt="Hat"></img>
-                    </div>
-                </div>
-              </Draggable>
+            <div className="col-xxl">
+              <Carousel interval={null}>
+                <Carousel.Item>
+                  <img
+                    className="cat d-block w-100"
+                    src={cat1}
+                    alt="cat1"
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="cat d-block w-100"
+                    src={cat2}
+                    alt="cat2"
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="cat d-block w-100"
+                    src={cat3}
+                    alt="cat3"
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="cat d-block w-100"
+                    src={cat4}
+                    alt="cat4"
+                  />
+                </Carousel.Item>
+              </Carousel>
             </div>
           </div>
         </div>
-
-        <Carousel interval={null}>
-          <Carousel.Item>
-            <img
-              className="cat d-block w-100"
-              src={cat1}
-              alt="cat1"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="cat d-block w-100"
-              src={cat2}
-              alt="cat2"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="cat d-block w-100"
-              src={cat3}
-              alt="cat3"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="cat d-block w-100"
-              src={cat4}
-              alt="cat4"
-            />
-          </Carousel.Item>
-        </Carousel>
       </div>
     );
   }

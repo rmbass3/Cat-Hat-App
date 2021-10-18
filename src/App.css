@@ -1,0 +1,119 @@
+html body {
+  background-color: rgb(36, 41, 41);
+}
+
+.hat-container {
+  margin-top: 25px;
+}
+
+.box {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  z-index: 10;
+}
+
+
+@keyframes rotate25 {
+  0.0%{
+  }
+  100%{
+      transform: rotate(0);
+  }
+  24.8%{
+      transform: rotate(10deg);
+  }
+  50.0%{
+  }
+  74.6%{
+      transform: rotate(-10deg);
+  }
+}
+
+.hat:hover {
+  animation: rotate25 5s infinite;
+  background-color: rgba(0, 0, 0, 0);
+
+}
+
+.hat {
+  width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.carousel {
+  margin-top: 25px;
+}
+
+.carousel-item .cat {
+  width: 500px!important;
+  margin: 0 auto;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.row .col {
+  height: 250px;
+}
+
+div .title-container {
+  margin-top: 30px;
+}
+
+.title {
+  color: rgb(218, 218, 218)
+}
+
+.title-container h1 {
+  font-size: 3rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.title-container h2 {
+  font-size: 2rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
+
+/* Extra extra large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+  .col.d-flex {
+    width: 50%;
+  }
+
+  .hat-container {
+    margin-top: 120px;
+  }
+}

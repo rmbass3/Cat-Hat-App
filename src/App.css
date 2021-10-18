@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+html body {
+  background-color: rgb(36, 41, 41);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hat-container {
+  margin-top: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.box {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  z-index: 10;
+}
+
+
+@keyframes rotate25 {
+  0.0%{
+  }
+  100%{
+      transform: rotate(0);
+  }
+  24.8%{
+      transform: rotate(10deg);
+  }
+  50.0%{
+  }
+  74.6%{
+      transform: rotate(-10deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hat:hover {
+  animation: rotate25 5s infinite;
+  background-color: rgba(0, 0, 0, 0);
+
 }
 
-.App-link {
-  color: #61dafb;
+.hat {
+  width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel {
+  margin-top: 25px;
+}
+
+.carousel-item .cat {
+  width: 500px!important;
+  margin: 0 auto;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.row .col {
+  height: 250px;
 }

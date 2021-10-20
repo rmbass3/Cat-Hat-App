@@ -1,7 +1,7 @@
 import React from 'react';
 import DraggableCore from 'react-draggable';
 import Draggable from 'react-draggable';
-import { Carousel, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Carousel, Dropdown, DropdownButton, Button } from 'react-bootstrap';
 import './App.css';
 import hat1 from './pics/hat1.png'
 import hat2 from './pics/hat2.png'
@@ -126,48 +126,46 @@ class App extends React.Component {
   }
 
   switchBackground(key) {
-    console.log("entered")
     switch(key) {
       case "1":
-        console.log("1")
         this.setState({
           bg: "url(" + bg1 + ")",
           slideDark: true
         })
-        console.log(this.state.bg)
         break;
       case "2":
         this.setState({
           bg: "url(" + bg2 + ")",
           slideDark: true
         })
-        console.log(this.state.bg)
         break;
       case "3":
         this.setState({
           bg: "url(" + bg3 + ")",
           slideDark: false
         })
-        console.log(this.state.bg)
         break;
       case "4":
         this.setState({
           bg: "url(" + bg4 + ")",
           slideDark: true
       })
-      console.log(this.state.bg)
         break;
       case "5":
         this.setState({
           bg: "url(" + bg5 + ")",
           slideDark: false
       })
-      console.log(this.state.bg)
         break;
       default:
         break;
     }
+  }
 
+  randomize() {
+    this.switchHatSet(String(Math.floor(Math.random() * 3) + 1))
+    this.switchCatSet(String(Math.floor(Math.random() * 3) + 1))
+    this.switchBackground(String(Math.floor(Math.random() * 5) + 1))
   }
   
 
@@ -334,6 +332,11 @@ class App extends React.Component {
               <Dropdown.Item eventKey="5">Outdoors</Dropdown.Item>
             </DropdownButton>
           </Dropdown>
+        </div>
+        <div className="container button-container d-flex justify-content-center">
+          <Button className="random-button" variant="secondary" size="lg" onClick={(e) => {
+            this.randomize();
+          }}>Randomize</Button>
         </div>
       </div>
     );

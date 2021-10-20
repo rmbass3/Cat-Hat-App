@@ -87,7 +87,7 @@ div .title-container {
 }
 
 .select-button {
-  margin: 50px;
+  margin: 30px 50px 10px 50px;
 }
 
 .main {
@@ -96,17 +96,29 @@ div .title-container {
   background-size: cover;
 }
 
-.button-container .random-button, .button-container .random-button:active, .button-container .random-button:visited {
-  height: 48px;
-  background-color:rgb(33, 36, 36)!important;
-  margin-right: 40px;
-  margin-bottom: 20px;
+.dropdown-toggle, .dropdown-item {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.button-container .random-button:hover {
+
+.button-container .button, .button-container .button:active, .button-container .button:visited {
+  height: 48px;
+  background-color:rgb(33, 36, 36)!important;
+  margin-bottom: 20px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.button-container .button:hover {
   background-color:rgb(13, 14, 14)!important;
 }
 
+.random-button {
+  margin-right: 100px;
+}
+
+.reset-button {
+  margin-right: 30px;
+}
 
 
 /* Extra small devices (phones, 600px and down) */

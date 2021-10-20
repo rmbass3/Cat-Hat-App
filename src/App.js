@@ -53,7 +53,10 @@ class App extends React.Component {
       cat_3 : cat3,
       cat_4 : cat4, 
       bg: "url(" + bg1 + ")",
-      slideDark : true
+      slideDark : true,
+      carouselIndex : 0,
+      positionX : 0,
+      positionY : 0
     }
   }
 
@@ -163,9 +166,38 @@ class App extends React.Component {
   }
 
   randomize() {
+    let randCarouselIndex = Math.floor(Math.random() * 4)
+    console.log(randCarouselIndex)
     this.switchHatSet(String(Math.floor(Math.random() * 3) + 1))
     this.switchCatSet(String(Math.floor(Math.random() * 3) + 1))
     this.switchBackground(String(Math.floor(Math.random() * 5) + 1))
+    this.setState({
+      carouselIndex: randCarouselIndex
+    })
+  }
+
+  handleSelect(selectedIndex, e) {
+    console.log(selectedIndex)
+    this.setState({
+      carouselIndex : selectedIndex
+    })
+  }
+
+  reset() {
+    this.setState({
+      hat_1 : hat1,
+      hat_2 : hat2,
+      hat_3 : hat3,
+      hat_4 : hat4,
+      cat_1 : cat1,
+      cat_2 : cat2,
+      cat_3 : cat3,
+      cat_4 : cat4, 
+      bg: "url(" + bg1 + ")",
+      slideDark : true,
+      carouselIndex : 0
+      
+    })
   }
   
 
@@ -182,10 +214,7 @@ class App extends React.Component {
               <div className="container hat-container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-xxl-4">
                   <div className="col d-flex justify-content-center">
-                    <DraggableCore
-                      dle=".handle"
-                      defaaxis="both"
-                      hanultPosition={{x: 0, y: 0}}
+                    <Draggable
                       position={null}
                       scale={1}
                       onStart={this.handleStart}
@@ -199,13 +228,10 @@ class App extends React.Component {
                           <img className="hat" src={this.state.hat_1} alt="Hat"></img>
                           </div>
                       </div>
-                    </DraggableCore>
+                    </Draggable>
                   </div>
                   <div className="col d-flex justify-content-center">
                     <Draggable
-                      dle=".handle"
-                      defaaxis="both"
-                      hanultPosition={{x: 0, y: 0}}
                       position={null}
                       scale={1}
                       onStart={this.handleStart}
@@ -223,9 +249,6 @@ class App extends React.Component {
                   </div>
                   <div className="col d-flex justify-content-center">
                     <Draggable
-                      dle=".handle"
-                      defaaxis="both"
-                      hanultPosition={{x: 0, y: 0}}
                       position={null}
                       scale={1}
                       onStart={this.handleStart}
@@ -243,9 +266,6 @@ class App extends React.Component {
                   </div>
                   <div className="col d-flex justify-content-center">
                     <Draggable
-                      dle=".handle"
-                      defaaxis="both"
-                      hanultPosition={{x: 0, y: 0}}
                       position={null}
                       scale={1}
                       onStart={this.handleStart}
@@ -265,9 +285,15 @@ class App extends React.Component {
               </div>
             </div>
             <div className="col-xxl">
-              <Carousel interval={null} variant={
-                this.state.slideDark ? "dark" : ""
-              }>
+              <Carousel 
+                interval={null} 
+                variant={this.state.slideDark ? "dark" : ""}
+                activeIndex={this.state.carouselIndex}
+                onSelect={(selectedIndex, e) => {
+                  this.handleSelect(selectedIndex, e)
+                }}
+                slide={false}
+              >
                 <Carousel.Item>
                   <img
                     className="cat d-block w-100"
@@ -304,7 +330,7 @@ class App extends React.Component {
           <Dropdown onSelect={(key, e) => {
               this.switchHatSet(key)
             }}>
-            <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg">
+            <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
               <Dropdown.Item eventKey="1">Hat Set 1</Dropdown.Item>
               <Dropdown.Item eventKey="2">Hat Set 2</Dropdown.Item>
               <Dropdown.Item eventKey="3">Hat Set 3</Dropdown.Item>
@@ -314,7 +340,7 @@ class App extends React.Component {
           <Dropdown onSelect={(key, e) => {
               this.switchCatSet(key)
             }}>
-            <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg">
+            <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
               <Dropdown.Item eventKey="1">Cat Set 1</Dropdown.Item>
               <Dropdown.Item eventKey="2">Cat Set 2</Dropdown.Item>
               <Dropdown.Item eventKey="3">Cat Set 3</Dropdown.Item>
@@ -324,7 +350,7 @@ class App extends React.Component {
           <Dropdown onSelect={(key, e) => {
               this.switchBackground(key);
             }}>
-            <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg">
+            <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
               <Dropdown.Item eventKey="1">Home</Dropdown.Item>
               <Dropdown.Item eventKey="2">Party</Dropdown.Item>
               <Dropdown.Item eventKey="3">Library</Dropdown.Item>
@@ -334,9 +360,12 @@ class App extends React.Component {
           </Dropdown>
         </div>
         <div className="container button-container d-flex justify-content-center">
-          <Button className="random-button" variant="secondary" size="lg" onClick={(e) => {
+          <Button className="button random-button" variant="secondary" size="lg" onClick={(e) => {
             this.randomize();
           }}>Randomize</Button>
+          <Button className="button reset-button" variant="secondary" size="lg" onClick={(e) => {
+            this.reset();
+          }}>Reset Cats</Button>
         </div>
       </div>
     );

@@ -52,7 +52,8 @@ class App extends React.Component {
       cat_2 : cat2,
       cat_3 : cat3,
       cat_4 : cat4, 
-      bg: "url(" + bg1 + ")"
+      bg: "url(" + bg1 + ")",
+      slideDark : true
     }
   }
 
@@ -130,31 +131,36 @@ class App extends React.Component {
       case "1":
         console.log("1")
         this.setState({
-          bg: "url(" + bg1 + ")"
+          bg: "url(" + bg1 + ")",
+          slideDark: true
         })
         console.log(this.state.bg)
         break;
       case "2":
         this.setState({
-          bg: "url(" + bg2 + ")"
+          bg: "url(" + bg2 + ")",
+          slideDark: true
         })
         console.log(this.state.bg)
         break;
       case "3":
         this.setState({
-          bg: "url(" + bg3 + ")"
+          bg: "url(" + bg3 + ")",
+          slideDark: false
         })
         console.log(this.state.bg)
         break;
       case "4":
         this.setState({
-          bg: "url(" + bg4 + ")"
+          bg: "url(" + bg4 + ")",
+          slideDark: true
       })
       console.log(this.state.bg)
         break;
       case "5":
         this.setState({
-          bg: "url(" + bg5 + ")"
+          bg: "url(" + bg5 + ")",
+          slideDark: false
       })
       console.log(this.state.bg)
         break;
@@ -261,7 +267,9 @@ class App extends React.Component {
               </div>
             </div>
             <div className="col-xxl">
-              <Carousel interval={null}>
+              <Carousel interval={null} variant={
+                this.state.slideDark ? "dark" : ""
+              }>
                 <Carousel.Item>
                   <img
                     className="cat d-block w-100"

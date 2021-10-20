@@ -10,4 +10,8 @@ What more could you want?
 
 Just drag the hats onto the cat's head. Simple enough.
 
-## https://rmbass3.github.io/cat-hat-app/
+Choose from different sets of cats, hats and backgrounds.
+
+Use the random button for inspiration.
+
+## [Go to Cat-Hat-App Website](https://rmbass3.github.io/cat-hat-app/)

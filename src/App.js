@@ -27,6 +27,12 @@ import cat9 from './pics/cat9.png'
 import cat10 from './pics/cat10.png'
 import cat11 from './pics/cat11.png'
 import cat12 from './pics/cat12.png'
+import bg1 from './pics/bg1.png'
+import bg2 from './pics/bg2.png'
+import bg3 from './pics/bg3.png'
+import bg4 from './pics/bg4.png'
+import bg5 from './pics/bg5.png'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/carousel';
@@ -45,7 +51,8 @@ class App extends React.Component {
       cat_1 : cat1,
       cat_2 : cat2,
       cat_3 : cat3,
-      cat_4 : cat4,
+      cat_4 : cat4, 
+      bg: "url(" + bg1 + ")"
     }
   }
 
@@ -87,7 +94,6 @@ class App extends React.Component {
   }
 
   switchCatSet(key) {
-
     switch(key) {
       case "1":
         this.setState({
@@ -117,11 +123,51 @@ class App extends React.Component {
         break;
     }
   }
+
+  switchBackground(key) {
+    console.log("entered")
+    switch(key) {
+      case "1":
+        console.log("1")
+        this.setState({
+          bg: "url(" + bg1 + ")"
+        })
+        console.log(this.state.bg)
+        break;
+      case "2":
+        this.setState({
+          bg: "url(" + bg2 + ")"
+        })
+        console.log(this.state.bg)
+        break;
+      case "3":
+        this.setState({
+          bg: "url(" + bg3 + ")"
+        })
+        console.log(this.state.bg)
+        break;
+      case "4":
+        this.setState({
+          bg: "url(" + bg4 + ")"
+      })
+      console.log(this.state.bg)
+        break;
+      case "5":
+        this.setState({
+          bg: "url(" + bg5 + ")"
+      })
+      console.log(this.state.bg)
+        break;
+      default:
+        break;
+    }
+
+  }
   
 
   render() {
     return (
-      <div>
+      <div className="main" style={{backgroundImage: this.state.bg}}>
         <div className="container title-container">
           <h1 className="title text-center">Cat Hat</h1>
           <h2 className="title text-center"><i>Place the hats on the cats!</i></h2>
@@ -252,7 +298,7 @@ class App extends React.Component {
           <Dropdown onSelect={(key, e) => {
               this.switchHatSet(key)
             }}>
-            <DropdownButton id="dropdown-basic-button" title="Select Hat Set" className="select-button">
+            <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg">
               <Dropdown.Item eventKey="1">Hat Set 1</Dropdown.Item>
               <Dropdown.Item eventKey="2">Hat Set 2</Dropdown.Item>
               <Dropdown.Item eventKey="3">Hat Set 3</Dropdown.Item>
@@ -262,10 +308,22 @@ class App extends React.Component {
           <Dropdown onSelect={(key, e) => {
               this.switchCatSet(key)
             }}>
-            <DropdownButton id="dropdown-basic-button" title="Select Cat Set" className="select-button">
+            <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg">
               <Dropdown.Item eventKey="1">Cat Set 1</Dropdown.Item>
               <Dropdown.Item eventKey="2">Cat Set 2</Dropdown.Item>
               <Dropdown.Item eventKey="3">Cat Set 3</Dropdown.Item>
+            </DropdownButton>
+          </Dropdown>
+
+          <Dropdown onSelect={(key, e) => {
+              this.switchBackground(key);
+            }}>
+            <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg">
+              <Dropdown.Item eventKey="1">Home</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Party</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Library</Dropdown.Item>
+              <Dropdown.Item eventKey="4">Space</Dropdown.Item>
+              <Dropdown.Item eventKey="5">Outdoors</Dropdown.Item>
             </DropdownButton>
           </Dropdown>
         </div>

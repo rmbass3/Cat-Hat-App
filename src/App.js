@@ -1,5 +1,4 @@
 import React from 'react';
-import DraggableCore from 'react-draggable';
 import Draggable from 'react-draggable';
 import { Carousel, Dropdown, DropdownButton, Button } from 'react-bootstrap';
 import './App.css';

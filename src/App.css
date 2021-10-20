@@ -78,12 +78,12 @@ div .title-container {
 
 .title-container h1 {
   font-size: 3rem;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 .title-container h2 {
   font-size: 2rem;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 .select-button {
@@ -97,7 +97,7 @@ div .title-container {
 }
 
 .dropdown-toggle, .dropdown-item {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 
@@ -105,7 +105,7 @@ div .title-container {
   height: 48px;
   background-color:rgb(33, 36, 36)!important;
   margin-bottom: 20px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 .button-container .button:hover {

@@ -14,6 +14,14 @@ import hat9 from './pics/hat9.png'
 import hat10 from './pics/hat10.png'
 import hat11 from './pics/hat11.png'
 import hat12 from './pics/hat12.png'
+import hat13 from './pics/hat13.png'
+import hat14 from './pics/hat14.png'
+import hat15 from './pics/hat15.png'
+import hat16 from './pics/hat16.png'
+import hat17 from './pics/hat17.png'
+import hat18 from './pics/hat18.png'
+import hat19 from './pics/hat19.png'
+import hat20 from './pics/hat20.png'
 import cat1 from './pics/cat1.png'
 import cat2 from './pics/cat2.png'
 import cat3 from './pics/cat3.png'
@@ -26,11 +34,24 @@ import cat9 from './pics/cat9.png'
 import cat10 from './pics/cat10.png'
 import cat11 from './pics/cat11.png'
 import cat12 from './pics/cat12.png'
+import cat13 from './pics/cat13.png'
+import cat14 from './pics/cat14.png'
+import cat15 from './pics/cat15.png'
+import cat16 from './pics/cat16.png'
+import cat17 from './pics/cat17.png'
+import cat18 from './pics/cat18.png'
+import cat19 from './pics/cat19.png'
+import cat20 from './pics/cat20.png'
 import bg1 from './pics/bg1.png'
 import bg2 from './pics/bg2.png'
 import bg3 from './pics/bg3.png'
 import bg4 from './pics/bg4.png'
 import bg5 from './pics/bg5.png'
+import bg6 from './pics/bg6.png'
+import bg7 from './pics/bg7.png'
+import bg8 from './pics/bg8.png'
+import bg9 from './pics/bg9.png'
+import bg10 from './pics/bg10.png'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -90,6 +111,22 @@ class App extends React.Component {
           hat_3: hat11,
           hat_4: hat12
         })
+      break;
+      case "4":
+        this.setState({
+          hat_1: hat13,
+          hat_2: hat14,
+          hat_3: hat15,
+          hat_4: hat16
+        })
+      break;
+      case "5":
+        this.setState({
+          hat_1: hat17,
+          hat_2: hat18,
+          hat_3: hat19,
+          hat_4: hat20
+        })
         break;
       default:
         break;
@@ -120,6 +157,22 @@ class App extends React.Component {
           cat_2: cat10,
           cat_3: cat11,
           cat_4: cat12
+        })
+        break;
+      case "4":
+        this.setState({
+          cat_1: cat13,
+          cat_2: cat14,
+          cat_3: cat15,
+          cat_4: cat16
+        })
+        break;
+      case "5":
+        this.setState({
+          cat_1: cat17,
+          cat_2: cat18,
+          cat_3: cat19,
+          cat_4: cat20
         })
         break;
       default:
@@ -159,6 +212,36 @@ class App extends React.Component {
           slideDark: false
       })
         break;
+      case "6":
+        this.setState({
+          bg: "url(" + bg6 + ")",
+          slideDark: true
+        })
+        break;
+      case "7":
+        this.setState({
+          bg: "url(" + bg7 + ")",
+          slideDark: true
+        })
+        break;
+      case "8":
+        this.setState({
+          bg: "url(" + bg8 + ")",
+          slideDark: false
+        })
+        break;
+      case "9":
+        this.setState({
+          bg: "url(" + bg9 + ")",
+          slideDark: true
+      })
+        break;
+      case "10":
+        this.setState({
+          bg: "url(" + bg10 + ")",
+          slideDark: false
+      })
+        break;
       default:
         break;
     }
@@ -167,9 +250,9 @@ class App extends React.Component {
   randomize() {
     let randCarouselIndex = Math.floor(Math.random() * 4)
     console.log(randCarouselIndex)
-    this.switchHatSet(String(Math.floor(Math.random() * 3) + 1))
-    this.switchCatSet(String(Math.floor(Math.random() * 3) + 1))
-    this.switchBackground(String(Math.floor(Math.random() * 5) + 1))
+    this.switchHatSet(String(Math.floor(Math.random() * 5) + 1))
+    this.switchCatSet(String(Math.floor(Math.random() * 5) + 1))
+    this.switchBackground(String(Math.floor(Math.random() * 10) + 1))
     this.setState({
       carouselIndex: randCarouselIndex
     })
@@ -332,9 +415,11 @@ class App extends React.Component {
                   this.switchHatSet(key)
                 }}>
                 <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="menu select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-                  <Dropdown.Item eventKey="1">Hat Set 1</Dropdown.Item>
-                  <Dropdown.Item eventKey="2">Hat Set 2</Dropdown.Item>
-                  <Dropdown.Item eventKey="3">Hat Set 3</Dropdown.Item>
+                  <Dropdown.Item eventKey="1" className="d-flex justify-content-center">Hat Set 1</Dropdown.Item>
+                  <Dropdown.Item eventKey="2" className="d-flex justify-content-center">Hat Set 2</Dropdown.Item>
+                  <Dropdown.Item eventKey="3" className="d-flex justify-content-center">Hat Set 3</Dropdown.Item>
+                  <Dropdown.Item eventKey="4" className="d-flex justify-content-center">Hat Set 4</Dropdown.Item>
+                  <Dropdown.Item eventKey="5" className="d-flex justify-content-center">Hat Set 5</Dropdown.Item>
                 </DropdownButton>
               </Dropdown>
             </div>
@@ -343,9 +428,11 @@ class App extends React.Component {
                   this.switchCatSet(key)
                 }}>
                 <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-                  <Dropdown.Item eventKey="1">Cat Set 1</Dropdown.Item>
-                  <Dropdown.Item eventKey="2">Cat Set 2</Dropdown.Item>
-                  <Dropdown.Item eventKey="3">Cat Set 3</Dropdown.Item>
+                  <Dropdown.Item eventKey="1" className="d-flex justify-content-center">Cat Set 1</Dropdown.Item>
+                  <Dropdown.Item eventKey="2" className="d-flex justify-content-center">Cat Set 2</Dropdown.Item>
+                  <Dropdown.Item eventKey="3" className="d-flex justify-content-center">Cat Set 3</Dropdown.Item>
+                  <Dropdown.Item eventKey="4" className="d-flex justify-content-center">Cat Set 4</Dropdown.Item>
+                  <Dropdown.Item eventKey="5" className="d-flex justify-content-center">Cat Set 5</Dropdown.Item>
                 </DropdownButton>
               </Dropdown>
             </div>
@@ -354,11 +441,16 @@ class App extends React.Component {
                   this.switchBackground(key);
                 }}>
                 <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-                  <Dropdown.Item eventKey="1">Home</Dropdown.Item>
-                  <Dropdown.Item eventKey="2">Party</Dropdown.Item>
-                  <Dropdown.Item eventKey="3">Library</Dropdown.Item>
-                  <Dropdown.Item eventKey="4">Space</Dropdown.Item>
-                  <Dropdown.Item eventKey="5">Outdoors</Dropdown.Item>
+                  <Dropdown.Item eventKey="1" className="d-flex justify-content-center">Home</Dropdown.Item>
+                  <Dropdown.Item eventKey="2" className="d-flex justify-content-center">Party</Dropdown.Item>
+                  <Dropdown.Item eventKey="3" className="d-flex justify-content-center">Library</Dropdown.Item>
+                  <Dropdown.Item eventKey="4" className="d-flex justify-content-center">Space</Dropdown.Item>
+                  <Dropdown.Item eventKey="5" className="d-flex justify-content-center">Outdoors</Dropdown.Item>
+                  <Dropdown.Item eventKey="6" className="d-flex justify-content-center">Joker</Dropdown.Item>
+                  <Dropdown.Item eventKey="7" className="d-flex justify-content-center">Desert</Dropdown.Item>
+                  <Dropdown.Item eventKey="8" className="d-flex justify-content-center">McDonalds</Dropdown.Item>
+                  <Dropdown.Item eventKey="9" className="d-flex justify-content-center">Cyberpunk</Dropdown.Item>
+                  <Dropdown.Item eventKey="10" className="d-flex justify-content-center">Western</Dropdown.Item>
                 </DropdownButton>
               </Dropdown>
             </div>

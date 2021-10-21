@@ -29,21 +29,22 @@ html body {
   100%{
       transform: rotate(0);
   }
-  24.8%{
-      transform: rotate(10deg);
+  25.0%{
+      transform: rotate(5deg);
   }
   50.0%{
   }
-  74.6%{
-      transform: rotate(-10deg);
+  75.0%{
+      transform: rotate(-5deg);
   }
 }
 
 .hat:hover {
-  animation: rotate25 5s infinite;
+  animation: rotate25 0.7s ;
   background-color: rgba(0, 0, 0, 0);
-
 }
+
+
 
 .hat {
   width: 100%;
@@ -112,6 +113,7 @@ div .title-container {
 
 
 
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 576px) {
 
@@ -145,5 +147,7 @@ div .title-container {
 
   .hat-container {
     margin-top: 120px;
+    background-color: #ffffff94;
+    border-radius: 30px;
   }
 }

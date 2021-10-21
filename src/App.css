@@ -69,7 +69,7 @@ html body {
   -ms-user-select: none;
 }
 
-.row .col {
+.row .hat-col {
   height: 250px;
 }
 
@@ -95,7 +95,7 @@ div .title-container {
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
-.select-button {
+.select-button, .random-button, .reset-button {
   margin: 30px 50px 10px 50px;
 }
 
@@ -105,29 +105,11 @@ div .title-container {
   background-size: cover;
 }
 
-.dropdown-toggle, .dropdown-item {
+.dropdown-toggle, .dropdown-item, .random-button, .reset-button {
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-}
-
-
-.button-container .button, .button-container .button:active, .button-container .button:visited {
   height: 48px;
-  background-color:rgb(33, 36, 36)!important;
-  margin-bottom: 20px;
-  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
-.button-container .button:hover {
-  background-color:rgb(13, 14, 14)!important;
-}
-
-.random-button {
-  margin-right: 100px;
-}
-
-.reset-button {
-  margin-right: 30px;
-}
 
 
 /* Extra small devices (phones, 600px and down) */

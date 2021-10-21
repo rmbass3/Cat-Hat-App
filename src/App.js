@@ -211,8 +211,8 @@ class App extends React.Component {
           <div className="row">
             <div className="col-xxl">
               <div className="container hat-container">
-                <div className="row row-cols-1 row-cols-md-2 row-cols-xxl-4">
-                  <div className="col d-flex justify-content-center">
+                <div className="row row-cols-1 row-cols-md-2">
+                  <div className="col hat-col d-flex justify-content-center">
                     <Draggable
                       position={null}
                       scale={1}
@@ -229,7 +229,7 @@ class App extends React.Component {
                       </div>
                     </Draggable>
                   </div>
-                  <div className="col d-flex justify-content-center">
+                  <div className="col hat-col d-flex justify-content-center">
                     <Draggable
                       position={null}
                       scale={1}
@@ -246,7 +246,7 @@ class App extends React.Component {
                       </div>
                     </Draggable>
                   </div>
-                  <div className="col d-flex justify-content-center">
+                  <div className="col hat-col d-flex justify-content-center">
                     <Draggable
                       position={null}
                       scale={1}
@@ -263,7 +263,7 @@ class App extends React.Component {
                       </div>
                     </Draggable>
                   </div>
-                  <div className="col d-flex justify-content-center">
+                  <div className="col hat-col d-flex justify-content-center">
                     <Draggable
                       position={null}
                       scale={1}
@@ -326,45 +326,55 @@ class App extends React.Component {
           </div>
         </div>
         <div className="container select-container d-flex justify-content-center">
-          <Dropdown onSelect={(key, e) => {
-              this.switchHatSet(key)
-            }}>
-            <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-              <Dropdown.Item eventKey="1">Hat Set 1</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Hat Set 2</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Hat Set 3</Dropdown.Item>
-            </DropdownButton>
-          </Dropdown>
-
-          <Dropdown onSelect={(key, e) => {
-              this.switchCatSet(key)
-            }}>
-            <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-              <Dropdown.Item eventKey="1">Cat Set 1</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Cat Set 2</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Cat Set 3</Dropdown.Item>
-            </DropdownButton>
-          </Dropdown>
-
-          <Dropdown onSelect={(key, e) => {
-              this.switchBackground(key);
-            }}>
-            <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
-              <Dropdown.Item eventKey="1">Home</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Party</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Library</Dropdown.Item>
-              <Dropdown.Item eventKey="4">Space</Dropdown.Item>
-              <Dropdown.Item eventKey="5">Outdoors</Dropdown.Item>
-            </DropdownButton>
-          </Dropdown>
-        </div>
-        <div className="container button-container d-flex justify-content-center">
-          <Button className="button random-button" variant="secondary" size="lg" onClick={(e) => {
-            this.randomize();
-          }}>Randomize</Button>
-          <Button className="button reset-button" variant="secondary" size="lg" onClick={(e) => {
-            this.reset();
-          }}>Reset Cats</Button>
+          <div className="row row-cols-1 row-cols-md-3">
+            <div className="col d-flex justify-content-center">
+              <Dropdown onSelect={(key, e) => {
+                  this.switchHatSet(key)
+                }}>
+                <DropdownButton id="dropdown-basic-button" title="Hat Sets" className="menu select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
+                  <Dropdown.Item eventKey="1">Hat Set 1</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Hat Set 2</Dropdown.Item>
+                  <Dropdown.Item eventKey="3">Hat Set 3</Dropdown.Item>
+                </DropdownButton>
+              </Dropdown>
+            </div>
+            <div className="menu col d-flex justify-content-center">
+              <Dropdown onSelect={(key, e) => {
+                  this.switchCatSet(key)
+                }}>
+                <DropdownButton id="dropdown-basic-button" title="Cat Sets" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
+                  <Dropdown.Item eventKey="1">Cat Set 1</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Cat Set 2</Dropdown.Item>
+                  <Dropdown.Item eventKey="3">Cat Set 3</Dropdown.Item>
+                </DropdownButton>
+              </Dropdown>
+            </div>
+            <div className="menu col d-flex justify-content-center">
+              <Dropdown onSelect={(key, e) => {
+                  this.switchBackground(key);
+                }}>
+                <DropdownButton id="dropdown-basic-button" title="Backgrounds" className="select-button" menuVariant="dark" variant="secondary" size="lg" drop="up">
+                  <Dropdown.Item eventKey="1">Home</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Party</Dropdown.Item>
+                  <Dropdown.Item eventKey="3">Library</Dropdown.Item>
+                  <Dropdown.Item eventKey="4">Space</Dropdown.Item>
+                  <Dropdown.Item eventKey="5">Outdoors</Dropdown.Item>
+                </DropdownButton>
+              </Dropdown>
+            </div>
+            <div className="menu col d-flex justify-content-center">
+              <Button className="random-button" variant="secondary" size="lg" onClick={(e) => {
+                this.randomize();
+              }}>Randomize
+              </Button>
+            </div>
+            <div className="menu col d-flex justify-content-center">
+              <Button className="reset-button" variant="secondary" size="lg" onClick={(e) => {
+                this.reset();
+              }}>Reset
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     );

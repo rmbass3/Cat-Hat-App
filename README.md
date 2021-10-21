@@ -14,4 +14,6 @@ Choose from different sets of cats, hats and backgrounds.
 
 Use the random button for inspiration.
 
-## [Go to Cat-Hat-App Website](https://rmbass3.github.io/cat-hat-app/)
+Mobile-friendly!
+
+## <a href="https://rmbass3.github.io/cat-hat-app/" target="_blank">Go to Cat-Hat-App Website</a>

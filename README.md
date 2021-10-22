@@ -16,4 +16,4 @@ Use the random button for inspiration.
 
 Mobile-friendly!
 
-## <a href="https://rmbass3.github.io/cat-hat-app/" target="_blank">Go to Cat-Hat-App Website</a>
+## <a href="https://rmbass3.github.io/Cat-Hat-App/">Go to Cat-Hat-App Website</a>
